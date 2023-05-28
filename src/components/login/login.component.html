@@ -1,0 +1,40 @@
+<div class="container-fluid">
+  <div class="row d-flex justify-content-center">
+    <div class="card mt-5">
+      <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
+        {{ errorMessage }}
+      </div>
+      <h3>Login</h3>
+      <form #myform="ngForm" (ngSubmit)="onSubmit(myform)">
+        <div class="row">
+          <div class="col-12 mb-3">
+            <span class="form-input"> Email </span>
+            <input type="text" class="form-control" name="email" ngModel />
+          </div>
+          <div class="col-12 mb-4">
+            <span class="form-input">Password</span>
+            <input
+              type="password"
+              class="form-control"
+              name="password"
+              ngModel
+            />
+          </div>
+        </div>
+        <!-- <div class="col-lg-12"> -->
+        <button type="submit" class="btn btn-dark btn1">Login</button>
+        <!-- </div> -->
+      </form>
+    </div>
+    <div class="divider"><span></span><span>or</span><span></span></div>
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="d-flex justify-content-center">
+          <button [routerLink]="'/register'" class="btn btn-primary btn2">
+            Create new account ?
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
